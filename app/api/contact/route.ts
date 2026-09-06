@@ -1,6 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { connectDB } from "@/lib/db";
-import Contact from "@/models/contact";
 import nodemailer from "nodemailer";
 
 export async function POST(req: NextRequest) {
@@ -14,10 +12,6 @@ export async function POST(req: NextRequest) {
         { status: 400 },
       );
     }
-
-    await connectDB();
-
-    const newContact = await Contact.create({ name, email, message });
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -39,7 +33,7 @@ export async function POST(req: NextRequest) {
       `,
     });
 
-    return NextResponse.json({ success: true, data: newContact });
+    return NextResponse.json({ success: true });
   } catch (error) {
     console.error(error);
     return NextResponse.json(
