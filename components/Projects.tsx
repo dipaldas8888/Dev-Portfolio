@@ -39,10 +39,27 @@ export default function Projects() {
         "Redux Toolkit",
       ],
       live: "https://jobify-two-topaz.vercel.app/",
-      github: "#",
+      github: "https://github.com/dipaldas8888/jobify",
     },
     {
       id: 2,
+      title: "Crowdly",
+      description:
+        "A social media web app with real-time chat, activity notifications, 24 hr stories, activity feed, nested discussions, post sharing, location metadata, a custom bookmarking module, Cloudinary media uploads, email OTP validation via Nodemailer, and secure JWT handling.",
+      tags: [
+        "React.js",
+        "Tailwind CSS",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Socket.IO",
+        "Cloudinary",
+      ],
+      live: "https://crowdly-jade.vercel.app/",
+      github: "https://github.com/dipaldas8888/Crowdly",
+    },
+    {
+      id: 3,
       title: "BookNest",
       description:
         "A full-stack online bookstore featuring secure JWT & Google OAuth authentication, advanced book search and filtering, persistent shopping cart, and role-based admin dashboard.",
@@ -55,10 +72,26 @@ export default function Projects() {
         "Tailwind CSS",
       ],
       live: "https://book-nest-omega.vercel.app/",
-      github: "#",
+      github: "https://github.com/dipaldas8888/BookNest",
     },
     {
-      id: 3,
+      id: 4,
+      title: "NOVA",
+      description:
+        "A high-performance, fully responsive AI productivity SaaS landing page with glassmorphism visuals, dark/light theme persistence, React 19 code splitting, Suspense boundaries, optimized bundle size, interactive product demo modal, pricing toggle, persona tabs, animated counters, testimonials carousel, and accessible FAQ accordion.",
+      tags: [
+        "React 19",
+        "Tailwind CSS",
+        "JavaScript",
+        "Responsive Design",
+        "Dark Mode",
+        "Performance",
+      ],
+      live: "https://nova-phi-bice.vercel.app/",
+      github: "https://github.com/dipaldas8888/Nova",
+    },
+    {
+      id: 5,
       title: "SenseAI",
       description:
         "An AI-powered ATS resume builder and cover letter generator featuring multi-template selection, real-time resume scoring, and Google Gemini API integration.",
@@ -70,54 +103,54 @@ export default function Projects() {
         "Tailwind CSS",
         "Gemini AI",
       ],
-      github: "#",
+      github: "https://github.com/dipaldas8888/senseai",
     },
     {
-      id: 4,
+      id: 6,
       title: "Nexus",
       description:
         "A modern, feature-rich web application built with Next.js and Tailwind CSS featuring interactive components, responsive design, and seamless user experience.",
       tags: ["Next.js", "TypeScript", "React", "Tailwind CSS", "Shadcn UI"],
       live: "https://nexus-mocha-psi-35.vercel.app/",
-      github: "#",
+      github: "https://github.com/dipaldas8888/Nexus",
     },
     {
-      id: 5,
+      id: 7,
       title: "TCongs Assignment",
       description:
         "A responsive assignment application showcasing clean state management, modular component structure, dynamic UI elements, and API integration.",
       tags: ["React", "TypeScript", "Tailwind CSS", "REST APIs", "Vercel"],
       live: "https://tcongs-assignment-mu.vercel.app/",
-      github: "#",
+      github: "https://github.com/dipaldas8888/tcongs-assignment",
     },
     {
-      id: 6,
+      id: 8,
       title: "TaskFlow",
       description:
         "A full-stack task management application with user authentication, real-time updates, and a responsive design. Users can create, edit, and delete tasks, set priorities, and track progress.",
       tags: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
-      github: "#",
+      github: "https://github.com/dipaldas8888/TaskFlow",
       live: "https://task-flow-chi-sooty.vercel.app/",
     },
     {
-      id: 7,
+      id: 9,
       title: "DashHive",
       description:
         "A modern full-stack web application with secure JWT authentication, responsive UI, and scalable backend architecture.",
       tags: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
-      github: "#",
+      github: "https://github.com/dipaldas8888/Dashhive",
     },
     {
-      id: 8,
+      id: 10,
       title: "Landing Page",
       description:
         "This is a modern restaurant landing page built using React, Vite, and Tailwind CSS. The website provides a clean UI to showcase restaurant services, menu highlights, and contact information.",
       tags: ["React", "Tailwind CSS"],
-      github: "#",
+      github: "https://github.com/dipaldas8888/restro-landing",
       live: "https://restro-three-pi.vercel.app/",
     },
     {
-      id: 9,
+      id: 11,
       title: "NextCart",
       description:
         "A full-stack e-commerce platform with user authentication, product management, and a shopping cart system. It features a responsive design.",
@@ -132,16 +165,16 @@ export default function Projects() {
       repositories: [
         {
           label: "Frontend",
-          href: "#",
+          href: "https://github.com/dipaldas8888/NextCart",
         },
         {
           label: "Backend",
-          href: "#",
+          href: "https://github.com/dipaldas8888/NexttCart",
         },
       ],
     },
     {
-      id: 10,
+      id: 12,
       title: "NovaCare",
       description:
         "A full-stack healthcare platform for seamless doctor appointment booking, secure authentication and appointment management.",
@@ -156,16 +189,16 @@ export default function Projects() {
       repositories: [
         {
           label: "Frontend",
-          href: "#",
+          href: "https://github.com/dipaldas8888/NovaCareUI",
         },
         {
           label: "Backend",
-          href: "#",
+          href: "https://github.com/dipaldas8888/NovaCare",
         },
       ],
     },
     {
-      id: 11,
+      id: 13,
       title: "PingUp",
       description:
         "A highly responsive, production-ready real-time chat application featuring secure JWT authentication, typing indicators, online/offline status tracking, custom avatar creation, and real-time messaging via Socket.io.",
@@ -178,10 +211,10 @@ export default function Projects() {
         "Tailwind CSS",
       ],
       live: "https://ping-up-six-sigma.vercel.app/",
-      github: "#",
+      github: "https://github.com/dipaldas8888/ping-up",
     },
     {
-      id: 12,
+      id: 14,
       title: "Mini Exception Inbox",
       description:
         "An operator dashboard designed to detect production plan-vs-actual deficits, surface them in an exception inbox, and allow quick actions/status resolutions directly from the UI.",
@@ -194,7 +227,7 @@ export default function Projects() {
         "Pandas",
         "Vite",
       ],
-      github: "#",
+      github: "https://github.com/dipaldas8888/mini-exception",
     },
   ];
 

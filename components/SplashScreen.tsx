@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Code2, Sparkles, Terminal } from "lucide-react";
+import { Braces, Cpu, Layers3, Rocket, Terminal } from "lucide-react";
 
 export interface SplashScreenProps {
   onComplete?: () => void;
@@ -42,11 +42,18 @@ export default function SplashScreen({
   }, [minDuration, onComplete]);
 
   const getStatusMessage = (prog: number) => {
-    if (prog < 30) return "Initializing Core System...";
-    if (prog < 65) return "Loading 3D Scene & Canvas...";
-    if (prog < 90) return "Configuring Portfolio Components...";
-    return "Welcome to DevFolio";
+    if (prog < 28) return "Preparing interface";
+    if (prog < 58) return "Composing 3D workspace";
+    if (prog < 86) return "Syncing projects and skills";
+    return "Ready to explore";
   };
+
+  const stack = ["React", "Next.js", "Node", "MongoDB"];
+  const signals = [
+    { icon: Braces, label: "UI" },
+    { icon: Cpu, label: "API" },
+    { icon: Layers3, label: "UX" },
+  ];
 
   return (
     <AnimatePresence>
@@ -60,114 +67,138 @@ export default function SplashScreen({
             filter: "blur(16px)",
             transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] },
           }}
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden bg-background px-4"
+          className="fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-[#07080c] px-4 text-white"
         >
-          {/* Ambient Glowing Orbs */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#1e3a8a33,transparent_42%),linear-gradient(135deg,#111827_0%,#07080c_48%,#101010_100%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#ffffff0d_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:2.75rem_2.75rem] [mask-image:linear-gradient(to_bottom,transparent,#000_18%,#000_82%,transparent)]" />
           <motion.div
-            className="absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-primary/20 blur-[120px]"
-            animate={{
-              scale: [1, 1.25, 1],
-              opacity: [0.3, 0.6, 0.3],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div
-            className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-accent/20 blur-[120px]"
-            animate={{
-              scale: [1.2, 1, 1.2],
-              opacity: [0.4, 0.7, 0.4],
-            }}
-            transition={{
-              duration: 3.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+            className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sky-300/80 to-transparent"
+            animate={{ y: ["0vh", "100vh"], opacity: [0, 1, 0] }}
+            transition={{ duration: 2.6, repeat: Infinity, ease: "easeInOut" }}
           />
 
-          {/* Grid Background Pattern */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
-
-          {/* Center Brand Monogram */}
-          <div className="relative z-10 flex flex-col items-center text-center">
+          <div className="relative z-10 flex w-full max-w-3xl flex-col items-center text-center">
             <motion.div
-              initial={{ scale: 0.5, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="relative mb-8"
+              initial={{ opacity: 0, y: -14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, ease: "easeOut" }}
+              className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-medium text-white/70 shadow-2xl shadow-black/30 backdrop-blur-md"
             >
-              {/* Outer Pulsing Neon Ring */}
-              <motion.div
-                className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-primary via-sky-400 to-accent opacity-75 blur-lg"
-                animate={{
-                  rotate: [0, 360],
-                  scale: [0.95, 1.05, 0.95],
-                }}
-                transition={{
-                  rotate: { duration: 8, repeat: Infinity, ease: "linear" },
-                  scale: { duration: 2, repeat: Infinity, ease: "easeInOut" },
-                }}
-              />
+              <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_18px_rgba(52,211,153,0.9)]" />
+              Portfolio system online
+            </motion.div>
 
-              {/* Central Hex / Badge Container */}
-              <div className="relative flex h-24 w-24 items-center justify-center rounded-2xl border border-white/20 bg-background/80 shadow-2xl backdrop-blur-xl sm:h-28 sm:w-28">
-                <Code2 className="h-12 w-12 text-primary sm:h-14 sm:w-14" />
+            <motion.div
+              initial={{ scale: 0.86, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              className="relative mb-8 flex h-36 w-36 items-center justify-center sm:h-44 sm:w-44"
+            >
+              <motion.div
+                className="absolute inset-0 rounded-[2rem] border border-sky-300/25"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+              />
+              <motion.div
+                className="absolute inset-4 rounded-[1.55rem] border border-orange-300/20"
+                animate={{ rotate: -360 }}
+                transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
+              />
+              <div className="absolute inset-8 rounded-2xl bg-gradient-to-br from-sky-400 via-primary to-accent opacity-80 blur-xl" />
+              <div className="relative flex h-24 w-24 items-center justify-center rounded-2xl border border-white/20 bg-[#0b0f18]/90 shadow-2xl shadow-sky-950/60 backdrop-blur-xl sm:h-28 sm:w-28">
+                <span className="bg-gradient-to-br from-white via-sky-200 to-orange-200 bg-clip-text text-4xl font-black text-transparent sm:text-5xl">
+                  D
+                </span>
                 <motion.div
-                  className="absolute -bottom-1 -right-1 flex h-7 w-7 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-md"
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
+                  className="absolute -right-2 -top-2 flex h-9 w-9 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-sky-200 shadow-lg backdrop-blur-md"
+                  animate={{ y: [0, -5, 0] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 >
-                  <Sparkles className="h-4 w-4" />
+                  <Rocket className="h-4 w-4" />
                 </motion.div>
               </div>
             </motion.div>
 
-            {/* Developer Title */}
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-2"
+              className="space-y-4"
             >
-              <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
-                <span className="bg-gradient-to-r from-primary via-sky-400 to-accent bg-clip-text text-transparent">
-                  PORTFOLIO
+              <h1 className="text-4xl font-black leading-tight sm:text-5xl md:text-6xl">
+                <span className="block text-white">DevFolio</span>
+                <span className="block bg-gradient-to-r from-sky-300 via-white to-orange-300 bg-clip-text text-transparent">
+                  Built for impact
                 </span>
               </h1>
-              <p className="flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground sm:text-sm">
-                <Terminal className="h-4 w-4 text-primary" />
-                Full-Stack Engineer
+              <p className="mx-auto flex max-w-xl items-center justify-center gap-2 text-sm font-medium text-white/65 sm:text-base">
+                <Terminal className="h-4 w-4 shrink-0 text-sky-300" />
+                Full-stack experiences with clean UI, fast APIs, and product-grade detail.
               </p>
             </motion.div>
 
-            {/* Animated Progress Bar & Percentage */}
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.28 }}
+              className="mt-8 flex flex-wrap justify-center gap-2"
+            >
+              {stack.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-md border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-semibold text-white/70 backdrop-blur-md"
+                >
+                  {item}
+                </span>
+              ))}
+            </motion.div>
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="mt-10 w-72 sm:w-80"
+              transition={{ duration: 0.6, delay: 0.36 }}
+              className="mt-10 w-full max-w-md"
             >
-              <div className="relative h-2.5 w-full overflow-hidden rounded-full border border-white/10 bg-white/5 p-0.5 backdrop-blur-md">
+              <div className="mb-4 grid grid-cols-3 gap-2">
+                {signals.map(({ icon: Icon, label }, index) => (
+                  <div
+                    key={label}
+                    className="flex items-center justify-center gap-2 rounded-md border border-white/10 bg-white/[0.035] px-3 py-2 text-xs font-semibold text-white/65"
+                  >
+                    <Icon className="h-3.5 w-3.5 text-sky-300" />
+                    {label}
+                    <span
+                      className={
+                        progress > (index + 1) * 26
+                          ? "h-1.5 w-1.5 rounded-full bg-emerald-400"
+                          : "h-1.5 w-1.5 rounded-full bg-white/25"
+                      }
+                    />
+                  </div>
+                ))}
+              </div>
+
+              <div className="relative h-3 w-full overflow-hidden rounded-md border border-white/10 bg-white/[0.06] p-0.5 shadow-2xl shadow-black/30 backdrop-blur-md">
                 <motion.div
-                  className="h-full rounded-full bg-gradient-to-r from-primary via-sky-400 to-accent"
+                  className="h-full rounded-[0.35rem] bg-gradient-to-r from-sky-300 via-primary to-accent"
                   style={{
                     width: `${progress}%`,
-                    boxShadow: "0 0 16px rgba(59, 130, 246, 0.8)",
+                    boxShadow: "0 0 24px rgba(56, 189, 248, 0.45)",
                   }}
                   transition={{ ease: "easeOut" }}
                 />
+                <div className="absolute inset-0 bg-[linear-gradient(110deg,transparent_0%,rgba(255,255,255,0.25)_45%,transparent_60%)] opacity-40 animate-move-right" />
               </div>
 
-              {/* Status and Percentage Label */}
-              <div className="mt-4 flex items-center justify-between text-xs font-medium text-muted-foreground">
-                <span className="flex items-center gap-1.5">
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary animate-ping" />
+              <div className="mt-4 flex items-center justify-between gap-4 text-xs font-medium text-white/55">
+                <span className="flex min-w-0 items-center gap-2 text-left">
+                  <span className="relative flex h-2 w-2 shrink-0">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-300 opacity-70" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-sky-300" />
+                  </span>
                   {getStatusMessage(progress)}
                 </span>
-                <span className="font-mono font-bold text-foreground">
+                <span className="font-mono text-sm font-bold text-white">
                   {progress}%
                 </span>
               </div>
